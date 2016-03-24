@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/sydney
 Author: aThemes
 Author URI: http://athemes.com
 Description: Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an awesome online presence. Sydney brings plenty of customization possibilities like access to all Google Fonts, full color control, layout control, logo upload, full screen slider, header image, sticky navigation and much more. Also, Sydney provides all the construction blocks you need to rapidly create an engaging front page.
-Version: 1.25
+Version: 1.26
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sydney
@@ -1072,7 +1072,6 @@ Hero section
 	    text-align: center;
 	    z-index: 2;
 	    width: 100%;
-		min-height: 260px;
 		padding-top: 5px;
 	    -webkit-transform: translateY(-50%);
 	       -moz-transform: translateY(-50%);
@@ -1111,6 +1110,60 @@ Hero section
 		padding: 20px 0 50px;
 		font-weight: 300;
 	}
+.text-slider {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+@-webkit-keyframes fadeInRightBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRightBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.slide-inner {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 2;
+	width: 100%;
+	min-height: 260px;
+	padding-top: 5px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.header-slider {
+	overflow: hidden;
+}	
 /*--------------------------------------------------------------
 Page title
 --------------------------------------------------------------*/
@@ -2934,6 +2987,9 @@ Panels
 		.footer-widgets .widget {
 			margin-bottom: 50px;
 		}
+		.text-slider-stopped {
+			top: 70%;
+		}
 	}
 	@media only screen and (max-width: 1024px) {
 		.slides-container .slide-item,	
@@ -2962,7 +3018,11 @@ Panels
 		.site-header {
 			position: static;
 			background-color: rgba(0,0,0,0.9);
-		}			
+		}
+		.posts-navigation {
+			overflow: hidden;
+			margin-bottom: 30px;
+		}					
 	}
 	@media only screen and (max-width: 780px) {	
 		.roll-client .client-item img {
@@ -3102,4 +3162,4 @@ Panels
 		.text-slider {
 			margin-bottom: 0;
 		}		
-	}	
+	}

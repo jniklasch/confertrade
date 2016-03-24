@@ -25,6 +25,16 @@
         }
     };
 
+    var testiPad;
+    var isiPad = {
+        iOS: function() {
+            return navigator.userAgent.match(/iPad/i);
+        },
+        any: function() {
+            return ( isiPad.iOS() );
+        }
+    };   
+
     var sliderFix = function() {
     	$( ".slides-container .slide-item").addClass('sliderFix');
     	setTimeout(function(){$( ".slides-container .slide-item").removeClass('sliderFix');}, 200);	
@@ -67,6 +77,8 @@
 		        $('html,body').animate({
 		          scrollTop: target.offset().top - 70
 		        }, 1000);
+
+		        if($('#mainnav-mobi').length) $('#mainnav-mobi').hide();
 		        return false;
 		      }
 		    }
@@ -133,6 +145,13 @@
 			$(".panel-row-style, .slide-item").parallax("50%", 0.3);
 		}
 	};
+
+	var checkipad = function() {
+		testiPad = isiPad.any();
+		if (testiPad != null) {
+			$(".slides-container .slide-item").css("background-attachment", "scroll");
+		}
+	};	
 
 	var rollAnimation = function() {
 		$('.orches-animation').each( function() {
@@ -306,6 +325,7 @@
 		responsiveMenu();
 		responsiveVideo();
 		rollAnimation();
+		checkipad();		
 		panelsStyling();
 		scrolls();
 		projectEffect();

@@ -28,7 +28,7 @@
         <div class="pre-bounce1"></div>
         <div class="pre-bounce2"></div>
     </div>
-</div>	
+</div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sydney' ); ?></a>
 
@@ -41,14 +41,12 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
 		        <?php else : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>	        
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		        <?php endif; ?>
 				</div>
 				<div class="col-md-8 col-sm-4 col-xs-12">
-					<div class="btn-menu"></div>
 					<nav id="mainnav" class="mainnav" role="navigation">
-
-						<a href="#primary" class="roll-button button-slider">Join Now</a>
+						<a class="roll-button button-slider" href="#paypal">Join Now</a>
 					</nav><!-- #site-navigation -->
 				</div>
 				</div>
@@ -64,4 +62,4 @@
 
 	<div id="content" class="page-wrap">
 		<div class="container content-wrapper">
-			<div class="row">	
+			<div class="row">

@@ -1,6 +1,16 @@
 Changelog
 
-20 February 2015 - 1.24
+20 March 2016 - 1.26
+- fixed slider synch issue. Slider structure completely changed;
+- posts navigation fix for mobiles;
+- mobile menu now closes when anchors are pressed;
+- employees center content option now applies on a per widget basis;
+- fixed blurry header slider images on iPad Pro;
+- changed recommended plugin from Types to Sydney Toolbox.
+
+1.25- no info
+
+20 February 2016 - 1.24
 - changed constructors in widgets;
 - fixed typo in customizer;
 - submenu transition fix for Safari;

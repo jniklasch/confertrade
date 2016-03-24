@@ -101,7 +101,7 @@ class Sydney_Employees extends WP_Widget {
 
 		<?php if ( $title ) echo $before_title . $title . $after_title; ?>
 
-		<div class="roll-team carousel owl-carousel">
+		<div class="roll-team carousel owl-carousel" data-widgetid="employees-<?php echo $args['widget_id']; ?>">
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 				<?php //Get the custom field values
 					$position = get_post_meta( get_the_ID(), 'wpcf-position', true );
@@ -165,21 +165,21 @@ class Sydney_Employees extends WP_Widget {
 	<?php
 		wp_reset_postdata();
 
-		if ($center_content) : ?>
-		<style>
-			@media only screen and (min-width: 971px) {
-				.roll-team .owl-wrapper {
-					text-align: center;
-					width: 100% !important;
-				}
-				.roll-team.owl-carousel .owl-item {
-					float: none;
-					display: inline-block;
-				}
-			}
-		</style>
+		if ($center_content) :
 
-		<?php
+		echo '<style>';
+			echo '@media only screen and (min-width: 971px) {';
+				echo '[data-widgetid="employees-' . $args['widget_id'] . '"].roll-team .owl-wrapper { text-align: center; width: 100% !important; }';
+				echo '[data-widgetid="employees-' . $args['widget_id'] . '"].roll-team.owl-carousel .owl-item { float: none; display: inline-block; }';
+			echo '}';
+		echo '</style>';
+?>
+
+<?php
+
+
+
+
 		endif;
 		
 		endif;

@@ -309,18 +309,19 @@ require_once dirname( __FILE__ ) . '/plugins/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'sydney_recommend_plugin' );
 function sydney_recommend_plugin() {
  
-    $plugins = array(
-        array(
+    $plugins[] = array(
             'name'               => 'Page Builder by SiteOrigin',
             'slug'               => 'siteorigin-panels',
             'required'           => false,
-        ),
-        array(
-            'name'               => 'Types - Custom Fields and Custom Post Types Management',
-            'slug'               => 'types',
-            'required'           => false,
-        ),          
     );
+
+	if ( !function_exists('wpcf_init') ) {
+	    $plugins[] = array(
+		        'name'               => 'Sydney Toolbox - custom posts and fields for the Sydney theme',
+		        'slug'               => 'sydney-toolbox',
+		        'required'           => false,
+		);
+	}
  
     tgmpa( $plugins);
  

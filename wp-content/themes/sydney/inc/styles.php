@@ -176,6 +176,14 @@ function sydney_custom_styles($custom) {
 	$custom .= ".page-wrap { padding-top:" . intval($pw_top_padding) . "px;}"."\n";	
 	$custom .= ".page-wrap { padding-bottom:" . intval($pw_bottom_padding) . "px;}"."\n";	
 
+
+    $text_slide = get_theme_mod('textslider_slide', 0);
+    if ( $text_slide ) {
+		$custom .= ".slide-inner { display:none;}"."\n";	
+		$custom .= ".slide-inner.text-slider-stopped { display:block;}"."\n";	
+    }
+
+
 	//Output all the styles
 	wp_add_inline_style( 'sydney-style', $custom );	
 }

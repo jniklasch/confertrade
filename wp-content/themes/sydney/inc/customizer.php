@@ -189,23 +189,6 @@ function sydney_customize_register( $wp_customize ) {
         )
     );
     $wp_customize->add_setting(
-        'textslider_speed',
-        array(
-            'default' => __('4000','sydney'),
-            'sanitize_callback' => 'absint',
-        )
-    );
-    $wp_customize->add_control(
-        'textslider_speed',
-        array(
-            'label' => __( 'Text slider speed', 'sydney' ),
-            'section' => 'sydney_slider',
-            'type' => 'number',
-            'description'   => __('Text slider speed in miliseconds [default: 4000]', 'sydney'),       
-            'priority' => 8
-        )
-    );
-    $wp_customize->add_setting(
         'textslider_slide',
         array(
             'sanitize_callback' => 'sydney_sanitize_checkbox',
